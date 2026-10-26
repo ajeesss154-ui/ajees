@@ -33,7 +33,7 @@ py -3.12 -m venv .venv
 & ".\.venv\Scripts\python.exe" main.py
 ```
 
-If using the ZIP, open PowerShell in the extracted folder and run the last three commands. Setup downloads dependencies and browser engines and can take several minutes. It must run from the repository folder.
+If using the ZIP, open the `jarvis` folder inside the extracted repository, open PowerShell there, and run the last three commands. Setup downloads dependencies and browser engines and can take several minutes. It must run from the repository folder.
 
 On the first-run screen, select Windows and enter your own [Gemini API key](https://aistudio.google.com/app/apikey). Provider availability, free-tier eligibility, and quotas depend on your account and the selected model. The original assistant also has optional provider configuration; see its settings and [upstream documentation](docs/UPSTREAM.md).
 

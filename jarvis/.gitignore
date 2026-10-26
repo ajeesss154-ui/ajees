@@ -1,0 +1,47 @@
+# Credentials and authenticated sessions
+config/api_keys.json
+config/certs/
+config/whatsapp_web/
+**/token*.json
+**/client_secret*.json
+*credentials*.json
+.env
+.env.*
+
+# Personal memory and workspace records
+memory/long_term.json
+memory/*.db
+personal_workspace/data/
+personal_workspace/upgrade.json
+**/personal_workspace/data/
+**/personal_workspace/upgrade.json
+upgrade-backups/
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.db-wal
+*.db-shm
+
+# Python, environments, and generated files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+logs/
+downloads/
+screenshots/
