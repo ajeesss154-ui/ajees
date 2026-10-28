@@ -1,0 +1,11 @@
+<resources>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">#090D15</item>
+        <item name="android:navigationBarColor">#090D15</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:colorAccent">#9FF4C7</item>
+    </style>
+    <string name="accessibility_description">Optional access for AURA. Only when AI MODE is on and you explicitly request it, AURA reads the selected app’s visible text or previews a supported action. It does not collect accessibility events. Password fields, editable fields, and recognized sensitive apps are excluded. You can disable this service in Android Settings at any time.</string>
+</resources>

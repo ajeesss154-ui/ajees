@@ -1,0 +1,16 @@
+.aura.env
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.gradle/
+**/build/
+android/local.properties
+*.jks
+*.keystore
+*.log
+*.sqlite3*
+node_modules/

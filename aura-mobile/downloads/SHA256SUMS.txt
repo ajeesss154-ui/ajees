@@ -1,0 +1,2 @@
+865f11c8b5307cdf4bd7c49eef6772add496e69810c73b8b520c1289792ae4de  aura-android-debug.apk
+eb98adadd143729d7bcdbf9bcf42041eca8190cb34db3a34cd63582862446fd2  aura-source-1.0.zip

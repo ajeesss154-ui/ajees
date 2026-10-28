@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#141918">
+  <meta name="description" content="AURA — a personal AI companion with intentional voice and screen assistance.">
+  <title>AURA · A little clarity</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h11"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m5 12 14 0m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11v1a7 7 0 0 0 14 0v-1m-7 8v3m-4 0h8"/></symbol>
+  <symbol id="i-screen" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M10 5h4m-3 14h2"/></symbol>
+  <symbol id="i-memory" viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v14H8a3 3 0 0 1-3-3V4Zm0 13h14M9 8h6m-6 4h4"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 8 10 8 10s8-5 8-10V6l-8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 19V5m-6 6 6-6 6 6"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+</defs></svg>
+<div class="app-shell">
+  <header class="topbar">
+    <button class="icon-button menu-button" id="menu-button" aria-label="Open menu"><svg><use href="#i-menu"/></svg></button>
+    <a class="brand" href="#" aria-label="AURA home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>aura<span class="brand-period">.</span></a>
+    <button class="connection-indicator" id="connection-button" aria-label="Connection settings"><span class="status-dot"></span><span id="connection-short">Set up</span></button>
+  </header>
+  <main>
+    <section class="day-header" aria-label="Your day">
+      <div class="clock-block"><time id="clock" class="clock">--:--</time><p id="date" class="date">YOUR SPACE, YOUR PACE</p></div>
+      <div class="mode-block"><span class="mode-label">AI MODE</span><button class="mode-toggle" id="ai-mode" role="switch" aria-checked="false" aria-label="AI mode"><span></span></button><span class="mode-caption" id="mode-caption">Off</span></div>
+    </section>
+    <section class="intro" id="intro">
+      <p class="eyebrow"><span></span> YOUR PERSONAL ASSISTANT</p>
+      <h1>How can I help<span>?</span></h1>
+      <p class="intro-copy">Ask a question or choose a quick action.</p>
+    </section>
+    <section class="presence" aria-label="Assistant status">
+      <div class="orb-stage" id="orb-stage"><div class="orb-halo halo-one"></div><div class="orb-halo halo-two"></div><div class="orb"><div class="orb-inner"></div><div class="orb-highlight"></div></div><div class="orb-reflection"></div></div>
+      <div class="voice-wave" id="voice-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="presence-title" id="presence-title">Ready when you are.</p>
+      <p class="presence-note" id="presence-note">Turn on AI mode to begin.</p>
+      <button class="text-button stop-speaking" id="stop-speaking" hidden>Stop speaking</button>
+    </section>
+    <section class="quick-actions" aria-label="Quick actions">
+      <button class="action-card" id="talk-button"><span class="card-icon mint"><svg><use href="#i-mic"/></svg></span><span class="card-name">Talk</span><span class="card-copy">Say what’s on your mind</span><svg class="card-arrow"><use href="#i-arrow"/></svg></button>
+      <button class="action-card" id="screen-button"><span class="card-icon lilac"><svg><use href="#i-screen"/></svg></span><span class="card-name">Screen</span><span class="card-copy">A hand with what you see</span><svg class="card-arrow"><use href="#i-arrow"/></svg></button>
+      <button class="action-card" id="memory-button"><span class="card-icon sand"><svg><use href="#i-memory"/></svg></span><span class="card-name">Memory</span><span class="card-copy">Keep a thought for later</span><svg class="card-arrow"><use href="#i-arrow"/></svg></button>
+    </section>
+    <section class="conversation" id="conversation" aria-label="Conversation" hidden><div class="conversation-heading"><span>OUR CONVERSATION</span><button class="text-button" id="new-chat">New chat</button></div><div id="messages" aria-live="polite" aria-relevant="additions text"></div></section>
+    <section class="proposals" id="proposals" aria-label="Suggested actions" hidden></section>
+    <div class="page-note"><span class="tiny-mark">✧</span> A little less noise. A little more you.</div>
+  </main>
+  <div class="composer-dock">
+    <div class="context-preview" id="context-preview" hidden><span><svg><use href="#i-screen"/></svg><span id="context-label">Screen context attached</span></span><button id="remove-context" class="icon-button" aria-label="Remove attached context"><svg><use href="#i-close"/></svg></button></div>
+    <form class="composer" id="chat-form"><textarea id="message-input" rows="1" maxlength="12000" aria-label="Message AURA" placeholder="What’s on your mind?"></textarea><button class="icon-button composer-mic" id="composer-mic" type="button" aria-label="Dictate a message"><svg><use href="#i-mic"/></svg></button><button class="send-button" id="send-button" type="submit" aria-label="Send message"><svg><use href="#i-send"/></svg></button></form>
+    <div class="composer-meta"><span id="composer-status">Your companion, at your pace.</span><label><input type="checkbox" id="speak-replies"> Speak replies</label></div>
+  </div>
+</div>
+<dialog class="drawer" id="menu-dialog" aria-labelledby="menu-heading"><div class="sheet-header"><h2 id="menu-heading">Your space.</h2><button class="icon-button" data-close="menu-dialog" aria-label="Close menu"><svg><use href="#i-close"/></svg></button></div><p class="sheet-description">A few things, just the way you like them.</p><nav class="drawer-nav"><button data-open="settings-dialog"><svg><use href="#i-settings"/></svg><span>Connection settings<small>Your AI server and access</small></span><span>↗</span></button><button data-open="permissions-dialog"><svg><use href="#i-shield"/></svg><span>Permission center<small>Choose what AURA can access</small></span><span>↗</span></button><button data-open="memory-dialog"><svg><use href="#i-memory"/></svg><span>Saved memories<small>Only what you choose to keep</small></span><span>↗</span></button></nav><div class="drawer-footer"><span class="brand">aura<span class="brand-period">.</span></span><p>Built around your permission.<br>AI replies can make mistakes.</p></div></dialog>
+<dialog class="sheet" id="settings-dialog" aria-labelledby="settings-heading"><div class="sheet-header"><h2 id="settings-heading">Make a connection.</h2><button class="icon-button" data-close="settings-dialog" aria-label="Close settings"><svg><use href="#i-close"/></svg></button></div><p class="sheet-description">Connect to your AURA server. Provider API keys stay on that server.</p><form id="settings-form"><label class="field-label" for="server-url">Server address</label><input class="field" id="server-url" type="url" placeholder="http://127.0.0.1:8787" required spellcheck="false" autocomplete="url"><p class="field-hint">On your phone, use your server’s reachable address. 127.0.0.1 means this device.</p><label class="field-label" for="access-token">AURA access token</label><input class="field" id="access-token" type="password" placeholder="Your server’s access token" autocomplete="off" spellcheck="false"><p class="field-hint" id="token-storage-note">Held for this browser session only.</p><div class="button-row"><button class="primary-button" type="submit">Save & connect <span>↗</span></button><button class="secondary-button" id="test-connection" type="button">Test connection</button></div></form><div class="inline-status" id="settings-status" role="status">Not connected yet.</div></dialog>
+<dialog class="sheet" id="permissions-dialog" aria-labelledby="permissions-heading"><div class="sheet-header"><h2 id="permissions-heading">You’re in control.</h2><button class="icon-button" data-close="permissions-dialog" aria-label="Close permissions"><svg><use href="#i-close"/></svg></button></div><p class="sheet-description" id="platform-description">Browser mode keeps phone controls unavailable.</p><div class="permission-row"><span class="card-icon mint"><svg><use href="#i-mic"/></svg></span><div><h3>Microphone</h3><p id="microphone-state">Not requested</p></div><button class="small-button" id="microphone-permission">Enable</button></div><div class="permission-row"><span class="card-icon lilac"><svg><use href="#i-screen"/></svg></span><div><h3>Screen assistance</h3><p id="accessibility-state">Android app required</p></div><button class="small-button" id="accessibility-permission">Enable</button></div><div class="permission-row"><span class="card-icon sand"><svg><use href="#i-shield"/></svg></span><div><h3>Notifications</h3><p id="notifications-state">Android app required</p></div><span class="permission-badge" id="notifications-badge">Unavailable</span></div><p class="privacy-note">Screen context is attached only when you tap “Attach current screen.” Turning AI mode off stops listening and clears pending context.</p></dialog>
+<dialog class="sheet" id="voice-dialog" aria-labelledby="voice-heading"><div class="sheet-header"><h2 id="voice-heading">Let’s talk.</h2><button class="icon-button" data-close="voice-dialog" aria-label="Close voice options"><svg><use href="#i-close"/></svg></button></div><p class="sheet-description">Dictate a message to review before sending, or start a live voice conversation.</p><button class="secondary-button full-width" id="dictate-button"><svg><use href="#i-mic"/></svg> Dictate a message</button><button class="primary-button full-width" id="start-live" disabled>Start live conversation <span>↗</span></button><button class="secondary-button full-width" id="stop-live" hidden><svg><use href="#i-stop"/></svg> End live conversation</button><div class="inline-status" id="live-status" role="status">Connect your server to check live voice availability.</div><p class="privacy-note">Live voice uses your microphone while the session is active. It does not share your screen or execute actions.</p></dialog>
+<dialog class="sheet" id="screen-dialog" aria-labelledby="screen-heading"><div class="sheet-header"><h2 id="screen-heading">A fresh perspective.</h2><button class="icon-button" data-close="screen-dialog" aria-label="Close screen assistance"><svg><use href="#i-close"/></svg></button></div><p class="sheet-description" id="screen-description">Share a single text snapshot for your next message. You can review it before sending.</p><button class="primary-button full-width" id="capture-screen"><svg><use href="#i-screen"/></svg> Attach current screen</button><p class="field-hint" id="screen-support">Requires the Android app and Accessibility access.</p><label class="field-label" for="manual-context">Or paste the text you want help with</label><textarea class="field context-field" id="manual-context" maxlength="16000" rows="6" placeholder="A message, a page, a task… only what you choose to share."></textarea><button class="secondary-button full-width" id="attach-manual-context">Attach pasted text <span>↗</span></button><div class="inline-status" id="screen-status" role="status"></div></dialog>
+<dialog class="sheet" id="memory-dialog" aria-labelledby="memory-heading"><div class="sheet-header"><h2 id="memory-heading">Worth remembering.</h2><button class="icon-button" data-close="memory-dialog" aria-label="Close memory"><svg><use href="#i-close"/></svg></button></div><p class="sheet-description">Save a thought explicitly. Memories stay on this device and aren’t automatically sent to the AI.</p><form id="memory-form"><label class="field-label" for="memory-title">A name for this thought</label><input class="field" id="memory-title" maxlength="100" placeholder="An idea for tomorrow" required><label class="field-label" for="memory-body">The thought</label><textarea class="field" id="memory-body" maxlength="10000" rows="4" placeholder="Something you’d like to come back to…" required></textarea><button class="primary-button full-width" type="submit">Save memory <svg><use href="#i-plus"/></svg></button></form><div class="memory-list" id="memory-list"></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="./live-voice.js" defer></script>
+<script src="./app.js" defer></script>
+</body>
+</html>
